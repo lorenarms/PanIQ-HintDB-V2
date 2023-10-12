@@ -29,17 +29,18 @@ namespace API.Data
 			modelBuilder.Entity<Puzzle>().HasData(new Puzzle
 			{
 				Id = 1,
-				Name = "Sit on Chair",
+				RoomId = 1,
 				Order = 1,
-				RoomId = 1
+				Name = "Sit on Chair",
+				Description = "Player must sit on the wizard's chair"
 			});
 
 			modelBuilder.Entity<Hint>().HasData(new Hint
 			{
 				Id = 1,
+				PuzzleId = 1,
 				Order = 1,
-				Description = "Sit on the chair!",
-				PuzzleId = 1
+				Description = "Sit on the chair!"
 			});
 		}
 

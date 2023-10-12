@@ -33,7 +33,8 @@ namespace API.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     RoomId = table.Column<int>(type: "int", nullable: false),
                     Order = table.Column<int>(type: "int", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -60,8 +61,8 @@ namespace API.Data.Migrations
 
             migrationBuilder.InsertData(
                 table: "Puzzles",
-                columns: new[] { "Id", "Name", "Order", "RoomId" },
-                values: new object[] { 1, "Sit on Chair", 1, 1 });
+                columns: new[] { "Id", "Description", "Name", "Order", "RoomId" },
+                values: new object[] { 1, "Player must sit on the wizard's chair", "Sit on Chair", 1, 1 });
 
             migrationBuilder.InsertData(
                 table: "Rooms",

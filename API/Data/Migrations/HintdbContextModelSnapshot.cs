@@ -60,6 +60,9 @@ namespace API.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
@@ -77,6 +80,7 @@ namespace API.Data.Migrations
                         new
                         {
                             Id = 1,
+                            Description = "Player must sit on the wizard's chair",
                             Name = "Sit on Chair",
                             Order = 1,
                             RoomId = 1

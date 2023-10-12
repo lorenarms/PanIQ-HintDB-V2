@@ -10,8 +10,10 @@ namespace Models.DTOs
 	{
 		public int Id { get; set; }
 		public int PuzzleId { get; set; }
+		public string PuzzleName { get; set; }
 		public int RoomId { get; set; }
-		public string Text { get; set; }
+		public string RoomName { get; set; }
+		public string Description { get; set; }
 		public int Order { get; set; }
 	}
 }
