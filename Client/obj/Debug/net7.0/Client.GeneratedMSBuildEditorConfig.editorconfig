@@ -28,8 +28,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lawrence/Git Repos/PanIQ HintDB V2/hintdb/Client/Pages/Index.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+[C:/Users/Lawrence/Git Repos/PanIQ HintDB V2/hintdb/Client/Pages/Hints.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSGludHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Lawrence/Git Repos/PanIQ HintDB V2/hintdb/Client/Shared/SurveyPrompt.razor]
@@ -39,6 +39,10 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/Users/Lawrence/Git Repos/PanIQ HintDB V2/hintdb/Client/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lawrence/Git Repos/PanIQ HintDB V2/hintdb/Client/Pages/Rooms.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUm9vbXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-iiclj3jb4r
 
 [C:/Users/Lawrence/Git Repos/PanIQ HintDB V2/hintdb/Client/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=

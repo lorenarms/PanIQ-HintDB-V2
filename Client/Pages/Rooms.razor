@@ -1,0 +1,41 @@
+﻿@page "/"
+@inherits RoomsBase
+
+@using Models.DTOs
+
+@if (Rooms == null)
+{
+	<h3>Loading Rooms...</h3>
+}
+else
+{
+	<h3 class="mb-5">Rooms</h3>
+
+	var roomCount = Rooms.Count();
+
+	@if (roomCount > 0)
+	{
+		const int itemsPerRow = 4;
+		var roomRowList = new List<RoomDto>();
+
+		@for (int i = 0; i < roomCount; i++)
+		{
+			roomRowList = Rooms.Skip(i * itemsPerRow).Take(itemsPerRow).ToList();
+
+			<div class="row mt-3">
+				@foreach (var item in roomRowList)
+				{
+					<div class="col-md-3 mb-2">
+						<a href="#">
+							<div class="card">
+								<img class="img-thumbnail" src="@item.Image"/>
+								<img class="name-overlay" src="@item.NameGraphic"/>
+							</div>
+						</a>
+					</div>
+				}
+			</div>
+		}
+
+	}
+}

@@ -1,0 +1,50 @@
+﻿@page "/hints"
+@inherits HintsBase
+
+@using Models.DTOs
+
+
+@if (Hints == null)
+{
+	<h3>Loading Hints...</h3>
+
+}
+else
+{
+	<h3 class="mb-5">Hints</h3>
+
+	var hintCount = Hints.Count();
+
+	@if (hintCount > 0)
+	{
+		const int itemsPerRow = 4;
+		var hintRowList = new List<HintDto>();
+
+		@for (int i = 0; i < hintCount; i++)
+		{
+			hintRowList = Hints.Skip(i * itemsPerRow).Take(itemsPerRow).ToList();
+
+			<div class="row mt-3">
+				@foreach (var item in hintRowList)
+				{
+					<div class="col-md-3 mb-2">
+						<a href="#">
+							<div class="card">
+								<img class="img-thumbnail" src="@item.Image"/>
+								<div class="card-body">
+									<h5 class="card-title mb-3">
+										@item.RoomName
+									</h5>
+									<p class="card-text">
+										@item.PuzzleName
+									</p>
+								</div>
+							</div>
+						</a>
+					</div>
+				}
+			</div>
+		}
+
+	}
+}

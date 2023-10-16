@@ -1,3 +1,13 @@
+/* /Pages/Rooms.razor.rz.scp.css */
+img-thumbnail[b-iiclj3jb4r] {
+    position: relative;
+}
+
+.name-overlay[b-iiclj3jb4r] {
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+}
 /* /Shared/MainLayout.razor.rz.scp.css */
 .page[b-ocnk4r8tjs] {
     position: relative;

@@ -2,6 +2,7 @@ using API.Data;
 using API.Repositories;
 using API.Repositories.Contracts;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Net.Http.Headers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,6 +28,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors(policy =>
+	policy.WithOrigins("http://localhost:7067", "https://localhost:7067")
+	.AllowAnyMethod()
+	.WithHeaders(HeaderNames.ContentType)
+);
 
 app.UseHttpsRedirection();
 

@@ -83,7 +83,7 @@ namespace API.Data.Migrations
                             Description = "Player must sit on the wizard's chair",
                             Name = "Sit on Chair",
                             Order = 1,
-                            RoomId = 1
+                            RoomId = 4
                         });
                 });
 
@@ -95,7 +95,13 @@ namespace API.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NameGraphic")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -106,7 +112,51 @@ namespace API.Data.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Wizard"
+                            Image = "https://paniqescaperoom.com/img/paniq/room-bg-the-time-machine-card-2.webp",
+                            Name = "Time Machine",
+                            NameGraphic = "https://paniqescaperoom.com/img/paniq/room-name-the-time-machine-2.png"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Image = "https://paniqescaperoom.com/img/paniq/room-bg-atlantis-rising-card-2.webp",
+                            Name = "Atlantis",
+                            NameGraphic = "https://paniqescaperoom.com/img/paniq/room-name-atlantis-rising-2.png"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Image = "https://paniqescaperoom.com/img/paniq/room-bg-haunted-manor-card-2.webp",
+                            Name = "Haunted",
+                            NameGraphic = "https://paniqescaperoom.com/img/paniq/room-name-haunted-manor-2.png"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Image = "https://paniqescaperoom.com/img/paniq/room-bg-wizard-trials-card-2.webp",
+                            Name = "Wizard",
+                            NameGraphic = "https://paniqescaperoom.com/img/paniq/room-name-wizard-trials-2.png"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Image = "https://paniqescaperoom.com/img/paniq/room-bg-zombie-outbreak-card-2.webp",
+                            Name = "Zombie",
+                            NameGraphic = "https://paniqescaperoom.com/img/paniq/room-name-zombie-outbreak-2.png"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Image = "https://paniqescaperoom.com/img/paniq/room-bg-casino-heist-card-2.webp",
+                            Name = "Casino",
+                            NameGraphic = "https://paniqescaperoom.com/img/paniq/room-name-casino-heist-2.png"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Image = "https://paniqescaperoom.com/img/paniq/room-bg-the-morning-after-card-2.webp",
+                            Name = "Morning After",
+                            NameGraphic = "https://paniqescaperoom.com/img/paniq/room-name-the-morning-after-2.png"
                         });
                 });
 #pragma warning restore 612, 618
