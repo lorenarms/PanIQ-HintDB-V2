@@ -29,15 +29,19 @@ namespace Client.Services
 
 		public async Task<IEnumerable<RoomDto>> GetRooms()
 		{
-			try
+			var response = await _httpClient.GetAsync("api/Room");
+			if (response.IsSuccessStatusCode)
 			{
-				var rooms = await _httpClient.GetFromJsonAsync<IEnumerable<RoomDto>>("api/Room");
-				return rooms;
+				if (response.StatusCode == System.Net.HttpStatusCode.NoContent)
+				{
+					return Enumerable.Empty<RoomDto>();
+				}
+
+				return await response.Content.ReadFromJsonAsync<IEnumerable<RoomDto>>();
 			}
-			catch (Exception)
-			{
-				throw;
-			}
+
+			var message = await response.Content.ReadAsStringAsync();
+			throw new Exception(message);
 		}
 	}
 }
