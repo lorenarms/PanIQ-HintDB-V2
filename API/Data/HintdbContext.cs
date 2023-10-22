@@ -15,9 +15,7 @@ namespace API.Data
 		public DbSet<Room> Rooms { get; set; }
 		public DbSet<Puzzle> Puzzles { get; set; }
 		public DbSet<Hint> Hints { get; set; }
-
 		
-
 		
 	}
 }

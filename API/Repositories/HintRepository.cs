@@ -29,9 +29,10 @@ namespace API.Repositories
 			return puzzles;
 		}
 
-		public Task<Puzzle> GetPuzzlesById(int id)
+		public async Task<IEnumerable<Puzzle>> GetPuzzlesById(int roomId)
 		{
-			throw new NotImplementedException();
+			var puzzles = await _context.Puzzles.Where(x => x.RoomId == roomId).ToListAsync();
+			return puzzles;
 		}
 
 		public async Task<IEnumerable<Room>> GetRooms()
@@ -40,9 +41,10 @@ namespace API.Repositories
 			return rooms;
 		}
 
-		public Task<Room> GetRoomsById(int id)
+		public async Task<Room> GetRoomsById(int id)
 		{
-			throw new NotImplementedException();
+			var room = await _context.Rooms.FirstOrDefaultAsync(x => x.Id == id);
+			return room;
 		}
 	}
 }

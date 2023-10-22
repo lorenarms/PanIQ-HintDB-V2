@@ -43,5 +43,25 @@ namespace Client.Services
 			var message = await response.Content.ReadAsStringAsync();
 			throw new Exception(message);
 		}
+
+		public async Task<IEnumerable<PuzzleDto>> GetPuzzlesByRoomId(int roomId)
+		{
+			var response = await _httpClient.GetAsync($"api/Puzzle/{roomId}");
+
+			if (response.IsSuccessStatusCode)
+			{
+				if (response.StatusCode == System.Net.HttpStatusCode.NoContent)
+				{
+					return default(IEnumerable<PuzzleDto>);
+				}
+
+				return await response.Content.ReadFromJsonAsync<IEnumerable<PuzzleDto>>();
+
+			}
+
+			var message = await response.Content.ReadAsStringAsync();
+			throw new Exception(message);
+
+		}
 	}
 }

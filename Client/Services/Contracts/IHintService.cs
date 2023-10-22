@@ -6,5 +6,6 @@ namespace Client.Services.Contracts
 	{
 		Task<IEnumerable<HintDto>> GetItems();
 		Task<IEnumerable<RoomDto>> GetRooms();
+		Task<IEnumerable<PuzzleDto>> GetPuzzlesByRoomId(int roomId);
 	}
 }

@@ -62,17 +62,53 @@ namespace API.Data
 				}
 			};
 
+			await context.Rooms.AddRangeAsync(rooms);
+			await context.SaveChangesAsync();
+
+			var wizard = context.Rooms.Single(r => r.Name == "Wizard");
+
 			var puzzles = new List<Puzzle>
 			{
 				new Puzzle()
 				{
-					//Id = 1,
-					RoomId = 4,
+					RoomId = wizard.Id,
 					Order = 1,
-					Name = "Sit on Chair",
-					Description = "Player must sit on the wizard's chair"
+					Name = "Knocking Chest",
+					Description = "Player must repeat the knock from the bookshelf on the chest"
+				},
+
+				new Puzzle()
+				{
+				RoomId = wizard.Id,
+				Order = 2,
+				Name = "Sit on Chair",
+				Description = "Player sits on the Wizard chair and activates the book on the desk"
+				},
+				new Puzzle()
+				{
+					RoomId = wizard.Id,
+					Order = 3,
+					Name = "Spirits Board",
+					Description = "Players must place the planchette on the board on the desk"
+				},
+
+				new Puzzle()
+				{
+					RoomId = wizard.Id,
+					Order = 4,
+					Name = "Code Panel",
+					Description = "Using the symbols revealed by the planchette, players enter the code"
+				},
+
+				new Puzzle()
+				{
+					RoomId = wizard.Id,
+					Order = 5,
+					Name = "Spell Chart",
+					Description = "Select the correct spells as revealed by the potions"
 				}
 			};
+
 
 			var hints = new List<Hint>
 			{
@@ -85,7 +121,7 @@ namespace API.Data
 				}
 			};
 
-			await context.Rooms.AddRangeAsync(rooms);
+			
 			await context.Puzzles.AddRangeAsync(puzzles);
 			await context.Hints.AddRangeAsync(hints);
 

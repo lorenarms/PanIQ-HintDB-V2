@@ -1,0 +1,48 @@
+﻿@page "/puzzles/{roomId:int}"
+@inherits PuzzlesBase
+
+@using Models.DTOs
+
+
+@if (Puzzles == null)
+{
+	<h3>Loading Puzzles...</h3>
+}
+else
+{
+	<h3 class="mb-5">Puzzles</h3>
+
+	var puzzleCount = Puzzles.Count();
+
+	@if (puzzleCount > 0)
+	{
+		const int itemsPerRow = 1;
+		var puzzleRowList = new List<PuzzleDto>();
+
+		@for (int i = 0; i < puzzleCount; i++)
+		{
+			puzzleRowList = Puzzles.Skip(i * itemsPerRow).Take(itemsPerRow).ToList();
+
+			<div class="row mt-3">
+				@foreach (var item in puzzleRowList)
+				{
+					<div class="col-md-12 mb-2">
+						<a href="#">
+							<div class="card">
+								<div class="card-body">
+									<h5 class="card-title mb-3">
+										@item.Name
+									</h5>
+									<p class="card-text">
+										@item.Description
+									</p>
+								</div>
+							</div>
+						</a>
+					</div>
+				}
+			</div>
+		}
+
+	}
+}

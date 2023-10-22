@@ -28,13 +28,27 @@ namespace API.Extensions
 		public static IEnumerable<RoomDto> ConvertToDto(this IEnumerable<Room> rooms)
 		{
 			return (from room in rooms
-				select new RoomDto
-				{
-					Id = room.Id,
-					Image = room.Image,
-					Name = room.Name,
-					NameGraphic = room.NameGraphic
-				}).ToList();
+					select new RoomDto
+					{
+						Id = room.Id,
+						Image = room.Image,
+						Name = room.Name,
+						NameGraphic = room.NameGraphic
+					}).ToList();
+		}
+
+		public static IEnumerable<PuzzleDto> ConvertToDto(this IEnumerable<Puzzle> puzzles, int roomId)
+		{
+			return (from puzzle in puzzles
+					select new PuzzleDto()
+					{
+						Id = puzzle.Id,
+						RoomId = roomId,
+						Name = puzzle.Name,
+						Description = puzzle.Description,
+						Order = puzzle.Order
+
+					}).ToList();
 		}
 	}
 }
