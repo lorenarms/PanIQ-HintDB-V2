@@ -20,24 +20,16 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lawrence/Git Repos/PanIQ HintDB V2/hintdb/Client/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+[C:/Users/Lawrence/Git Repos/PanIQ HintDB V2/hintdb/Client/Pages/Hints/Hints.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSGludHNcSGludHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lawrence/Git Repos/PanIQ HintDB V2/hintdb/Client/Pages/FetchData.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
+[C:/Users/Lawrence/Git Repos/PanIQ HintDB V2/hintdb/Client/Pages/Puzzles/NewPuzzles.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHV6emxlc1xOZXdQdXp6bGVzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lawrence/Git Repos/PanIQ HintDB V2/hintdb/Client/Pages/Hints.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSGludHMucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Lawrence/Git Repos/PanIQ HintDB V2/hintdb/Client/Pages/NewPuzzles.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmV3UHV6emxlcy5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Lawrence/Git Repos/PanIQ HintDB V2/hintdb/Client/Pages/Puzzles.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHV6emxlcy5yYXpvcg==
+[C:/Users/Lawrence/Git Repos/PanIQ HintDB V2/hintdb/Client/Pages/Puzzles/Puzzles.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHV6emxlc1xQdXp6bGVzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Lawrence/Git Repos/PanIQ HintDB V2/hintdb/Client/Shared/SurveyPrompt.razor]
@@ -48,9 +40,9 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Lawrence/Git Repos/PanIQ HintDB V2/hintdb/Client/Pages/Rooms.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUm9vbXMucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = b-iiclj3jb4r
+[C:/Users/Lawrence/Git Repos/PanIQ HintDB V2/hintdb/Client/Pages/Rooms/Rooms.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUm9vbXNcUm9vbXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-p4llpta66w
 
 [C:/Users/Lawrence/Git Repos/PanIQ HintDB V2/hintdb/Client/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=

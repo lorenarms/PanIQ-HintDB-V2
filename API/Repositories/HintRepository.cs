@@ -23,6 +23,15 @@ namespace API.Repositories
 			throw new NotImplementedException();
 		}
 
+		public async Task<IEnumerable<Hint>> GetPuzzleHintsById(int id)
+		{
+			var hints = await _context.Hints.Where(x => x.PuzzleId == id)
+				.Include(p => p.Puzzle)
+				.ThenInclude(r => r.Room).ToListAsync();
+			
+			return hints;
+		}
+
 		public async Task<IEnumerable<Puzzle>> GetPuzzles()
 		{
 			var puzzles = await _context.Puzzles.ToListAsync();

@@ -1,4 +1,5 @@
 ﻿using API.Entities;
+using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using Models.DTOs;
 
 namespace API.Extensions
@@ -8,8 +9,7 @@ namespace API.Extensions
 		public static IEnumerable<HintDto> ConvertToDto(this IEnumerable<Hint> hints, IEnumerable<Puzzle> puzzles, IEnumerable<Room> rooms)
 		{
 			return (from hint in hints
-					join puzzle in puzzles
-					on hint.PuzzleId equals puzzle.Id
+					join puzzle in puzzles on hint.PuzzleId equals puzzle.Id
 					join room in rooms on puzzle.RoomId equals room.Id
 					select new HintDto
 					{
@@ -49,6 +49,28 @@ namespace API.Extensions
 						Order = puzzle.Order
 
 					}).ToList();
+		}
+
+		public static IEnumerable<HintDto> ConvertToDto(this IEnumerable<Hint> hints)
+		{
+			List<HintDto> result = new List<HintDto>();
+			foreach (var hint in hints)
+			{
+				var hintDto = new HintDto()
+				{
+					Id = hint.Id,
+					PuzzleId = hint.PuzzleId,
+					PuzzleName = hint.Puzzle.Name,
+					RoomId = hint.Puzzle.RoomId,
+					RoomName = hint.Puzzle.Room.Name,
+					Description = hint.Description,
+					Order = hint.Order,
+					Image = null
+				};
+				result.Add(hintDto);
+			}
+
+			return result;
 		}
 	}
 }

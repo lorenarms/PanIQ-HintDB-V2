@@ -16,21 +16,19 @@ namespace API.Controllers
 			_hintRepository = hintRepository;
 		}
 
-		[HttpGet]
-		public async Task<ActionResult<IEnumerable<HintDto>>> GetHints()
+		[HttpGet("{puzzleId:int}")]
+		public async Task<ActionResult<IEnumerable<HintDto>>> GetPuzzleHintsById(int puzzleId)
 		{
 			try
 			{
-				var hints = await _hintRepository.GetHints();
-				var puzzles = await _hintRepository.GetPuzzles();
-				var rooms = await _hintRepository.GetRooms();
-
-				if (hints == null || puzzles == null)
+				var hints = await _hintRepository.GetPuzzleHintsById(puzzleId);
+				
+				if (hints == null)
 				{
 					return NotFound();
 				}
 
-				var hintDtos = hints.ConvertToDto(puzzles, rooms);
+				var hintDtos = hints.ConvertToDto();
 
 				return Ok(hintDtos);
 			}

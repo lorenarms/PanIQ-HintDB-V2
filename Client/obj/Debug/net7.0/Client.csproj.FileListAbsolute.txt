@@ -834,4 +834,4 @@ C:\Users\Lawrence\Git Repos\PanIQ HintDB V2\hintdb\Client\bin\Debug\net7.0\Model
 C:\Users\Lawrence\Git Repos\PanIQ HintDB V2\hintdb\Client\bin\Debug\net7.0\Models.pdb
 C:\Users\Lawrence\Git Repos\PanIQ HintDB V2\hintdb\Client\obj\Debug\net7.0\build-gz\X+REC+09.gz
 C:\Users\Lawrence\Git Repos\PanIQ HintDB V2\hintdb\Client\obj\Debug\net7.0\build-gz\oS2JekJr.gz
-C:\Users\Lawrence\Git Repos\PanIQ HintDB V2\hintdb\Client\obj\Debug\net7.0\scopedcss\Pages\Rooms.razor.rz.scp.css
+C:\Users\Lawrence\Git Repos\PanIQ HintDB V2\hintdb\Client\obj\Debug\net7.0\scopedcss\Pages\Rooms\Rooms.razor.rz.scp.css

@@ -79,10 +79,10 @@ namespace API.Data
 
 				new Puzzle()
 				{
-				RoomId = wizard.Id,
-				Order = 2,
-				Name = "Sit on Chair",
-				Description = "Player sits on the Wizard chair and activates the book on the desk"
+					RoomId = wizard.Id,
+					Order = 2,
+					Name = "Sit on Chair",
+					Description = "Player sits on the Wizard chair and activates the book on the desk"
 				},
 				new Puzzle()
 				{
@@ -109,20 +109,98 @@ namespace API.Data
 				}
 			};
 
-
+			await context.Puzzles.AddRangeAsync(puzzles);
+			await context.SaveChangesAsync();
+			
+			var knockingChest = context.Puzzles.Single(p => p.Name == "Knocking Chest");
+			
 			var hints = new List<Hint>
 			{
 				new Hint()
 				{
-					//Id = 1,
-					PuzzleId = 1,
+					PuzzleId = knockingChest.Id,
 					Order = 1,
-					Description = "Sit on the chair!"
-				}
+					Description = "I REALLY SHOULDN’T GIVE YOU TOO MUCH GUIDANCE – THIS IS A TEST, AFTER ALL – BUT I SUGGEST YOU BEGIN BY EXAMINING THE CHEST. AS I RECALL, IT CAME WITH AN INSTRUCTION MANUAL; I’M SURE IT’S ON THESE SHELVES SOMEWHERE…"
+				},
+
+				new Hint()
+				{
+					PuzzleId = knockingChest.Id,
+					Order = 2,
+					Description = "THE SPIRIT THAT HOLDS THE CHEST CLOSED EXPECTS YOU TO USE THE SECRET KNOCK."
+				},
+
+				new Hint()
+				{
+					PuzzleId = knockingChest.Id,
+					Order = 3,
+					Description = "LOCATE THE MANUAL ON THE SHELF – IT BEARS A LABEL THAT IS SIMILAR TO THE SYMBOL FOUND ON THE CHEST."
+				},
+
+				new Hint()
+				{
+					PuzzleId = knockingChest.Id,
+					Order = 4,
+					Description = "THE MANUAL CAN BE TRIGGERED BY PRESSING THE SPINE INWARD – THE CHEST WILL RESPOND BY DEMONSTRATING THE RHYTHM OF THE SECRET KNOCK."
+				},
+
+				new Hint()
+				{
+					PuzzleId = knockingChest.Id,
+					Order = 5,
+					Description = "THE RHYTHM WILL BE BEST HEARD IF YOU KNOCK DIRECTLY ON THE SYMBOL."
+				},
+
+				new Hint()
+				{
+					PuzzleId = knockingChest.Id,
+					Order = 6,
+					Description = "THE RHYTHM WILL BE BEST HEARD IF YOU RAP DIRECTLY ON THE SYMBOL."
+				},
+
+				new Hint()
+				{
+					PuzzleId = knockingChest.Id,
+					Order = 8,
+					Description = "NO NEED TO BE CAREFUL WITH THE OLD CHEST - RAP FIRMLY."
+				},
+
+				new Hint()
+				{
+					PuzzleId = knockingChest.Id,
+					Order = 7,
+					Description = "NO NEED TO BE CAREFUL WITH THE OLD CHEST - RAP FIRMLY, DIRECTLY ON THE SYMBOL."
+				},
+				new Hint()
+				{
+					PuzzleId = knockingChest.Id,
+					Order = 9,
+					Description = "IMAGE OF THE CHEST."
+				},
+
+				new Hint()
+				{
+					PuzzleId = knockingChest.Id,
+					Order = 10,
+					Description = "IMAGE OF THE SYMBOL."
+				},
+
+				new Hint()
+				{
+					PuzzleId = knockingChest.Id,
+					Order = 11,
+					Description = "IMAGE OF THE BOOK"
+				},
+
+				new Hint()
+				{
+					PuzzleId = knockingChest.Id,
+					Order = 12,
+					Description = "IMAGE OF THE SYMBOL + BOOK"
+				},
 			};
 
 			
-			await context.Puzzles.AddRangeAsync(puzzles);
 			await context.Hints.AddRangeAsync(hints);
 
 			await context.SaveChangesAsync();
