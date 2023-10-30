@@ -7,7 +7,9 @@ namespace API.Repositories.Contracts
 		Task<IEnumerable<Hint>> GetHints();
 		Task<Hint> GetHintById(int id);
 		Task<IEnumerable<Hint>> GetPuzzleHintsById(int id);
+		Task<Hint> AddNewHintToPuzzle(Hint hint);
 		Task<IEnumerable<Puzzle>> GetPuzzles();
+		Task<Puzzle> AddNewPuzzleToRoom(Puzzle puzzle);
 		Task<IEnumerable<Puzzle>> GetPuzzlesById(int id);
 		Task<IEnumerable<Room>> GetRooms();
 		Task<Room> GetRoomsById(int id);

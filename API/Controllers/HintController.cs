@@ -1,4 +1,5 @@
-﻿using API.Extensions;
+﻿using API.Entities;
+using API.Extensions;
 using API.Repositories.Contracts;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,7 +11,7 @@ namespace API.Controllers
 	[ApiController]
 	public class HintController : ControllerBase
 	{
-		private IHintRepository _hintRepository;
+		private readonly IHintRepository _hintRepository;
 		public HintController(IHintRepository hintRepository)
 		{
 			_hintRepository = hintRepository;
@@ -39,7 +40,22 @@ namespace API.Controllers
 			}
 		}
 
-		
+		[HttpPost("/newhint/{puzzleId:int}")]
+		public async Task<ActionResult<Hint>> AddHintToPuzzle(HintDto hintDto, int puzzleId)
+		{
+			var newHint = new Hint()
+			{
+				PuzzleId = puzzleId,
+				Order = hintDto.Order,
+				Description = hintDto.Description,
+			};
+
+			await _hintRepository.AddNewHintToPuzzle(newHint);
+
+			return Ok(newHint);
+		}
+
+
 
 	}
 }

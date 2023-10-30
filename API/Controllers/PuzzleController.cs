@@ -1,4 +1,5 @@
-﻿using API.Extensions;
+﻿using API.Entities;
+using API.Extensions;
 using API.Repositories.Contracts;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -39,6 +40,22 @@ namespace API.Controllers
 				return StatusCode(StatusCodes.Status500InternalServerError,
 					"Error retrieving data from the database");
 			}
+		}
+
+		[HttpPost("/newpuzzle/{roomId:int}")]
+		public async Task<ActionResult<Puzzle>> AddNewPuzzleToRoom(PuzzleDto puzzleDto, int roomId)
+		{
+			var newPuzzle = new Puzzle()
+			{
+				Name = puzzleDto.Name,
+				Description = puzzleDto.Description,
+				Order = puzzleDto.Order
+				
+			};
+
+			await _hintRepository.AddNewPuzzleToRoom(newPuzzle);
+
+			return Ok(newPuzzle);
 		}
 	}
 }

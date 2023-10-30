@@ -14,17 +14,22 @@ namespace Client.Services
 		}
 
 
-		public async Task<IEnumerable<HintDto>> GetItems()
+		public async Task<IEnumerable<HintDto>> GetHints(int puzzleId)
 		{
-			try
+			var response = await _httpClient.GetAsync($"api/Hint/{puzzleId}");
+
+			if (response.IsSuccessStatusCode)
 			{
-				var hints = await _httpClient.GetFromJsonAsync<IEnumerable<HintDto>>("api/Hint");
-				return hints;
+				if (response.StatusCode == System.Net.HttpStatusCode.NoContent)
+				{
+					return Enumerable.Empty<HintDto>();
+				}
+
+				return await response.Content.ReadFromJsonAsync<IEnumerable<HintDto>>();
 			}
-			catch (Exception)
-			{
-				throw;
-			}
+
+			var message = await response.Content.ReadAsStringAsync();
+			throw new Exception(message);
 		}
 
 		public async Task<IEnumerable<RoomDto>> GetRooms()

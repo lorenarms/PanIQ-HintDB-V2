@@ -23,6 +23,13 @@ namespace API.Repositories
 			throw new NotImplementedException();
 		}
 
+		public async Task<Hint> AddNewHintToPuzzle(Hint hint)
+		{
+			_context.Hints.Add(hint);
+			await _context.SaveChangesAsync();
+			return hint;
+		}
+
 		public async Task<IEnumerable<Hint>> GetPuzzleHintsById(int id)
 		{
 			var hints = await _context.Hints.Where(x => x.PuzzleId == id)
@@ -36,6 +43,13 @@ namespace API.Repositories
 		{
 			var puzzles = await _context.Puzzles.ToListAsync();
 			return puzzles;
+		}
+
+		public async Task<Puzzle> AddNewPuzzleToRoom(Puzzle puzzle)
+		{
+			_context.Puzzles.Add(puzzle);
+			await _context.SaveChangesAsync();
+			return puzzle;
 		}
 
 		public async Task<IEnumerable<Puzzle>> GetPuzzlesById(int roomId)
