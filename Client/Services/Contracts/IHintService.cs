@@ -1,4 +1,5 @@
-﻿using Models.DTOs;
+﻿using System.Reflection;
+using Models.DTOs;
 
 namespace Client.Services.Contracts
 {
@@ -7,5 +8,6 @@ namespace Client.Services.Contracts
 		Task<IEnumerable<HintDto>> GetHints(int puzzleId);
 		Task<IEnumerable<RoomDto>> GetRooms();
 		Task<IEnumerable<PuzzleDto>> GetPuzzlesByRoomId(int roomId);
+		Task<PuzzleDto> AddNewPuzzleToRoom(PuzzleDto puzzle);
 	}
 }

@@ -69,6 +69,12 @@ namespace Client.Services
 
 		}
 
-		
+		public async Task<PuzzleDto> AddNewPuzzleToRoom(PuzzleDto puzzle)
+		{
+			
+			var response = await _httpClient.PostAsJsonAsync($"NewPuzzle/{puzzle.RoomId}", puzzle);
+
+			return puzzle;
+		}
 	}
 }

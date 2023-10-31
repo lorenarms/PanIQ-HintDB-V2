@@ -44,6 +44,7 @@ namespace API.Extensions
 					{
 						Id = puzzle.Id,
 						RoomId = roomId,
+						RoomName = puzzle.Room.Name,
 						Name = puzzle.Name,
 						Description = puzzle.Description,
 						Order = puzzle.Order

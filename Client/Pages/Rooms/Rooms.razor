@@ -27,7 +27,7 @@ else
 				@foreach (var item in roomRowList)
 				{
 					<div class="col-md-3 mb-2">
-						<a href="/puzzles/@item.Id">
+						<a href="/puzzles/@item.Id/@item.Name">
 							<div class="card">
 								<img class="img-thumbnail" src="@item.Image"/>
 								<img class="name-overlay" src="@item.NameGraphic"/>

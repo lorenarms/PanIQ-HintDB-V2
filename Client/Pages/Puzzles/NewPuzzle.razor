@@ -1,0 +1,31 @@
+﻿@page "/newpuzzle/{roomId:int}/{roomName}"
+@inherits NewPuzzleBase
+@inject NavigationManager NavManager
+
+<h3>New Puzzle for @roomName</h3>
+
+<EditForm Model="@NewPuzzleToAdd" OnSubmit="HandleSubmit">
+	<DataAnnotationsValidator />
+	<div>
+		<label for="Name">Puzzle Name: </label>
+		<InputText id="Name" @bind-Value="@NewPuzzleToAdd.Name" class="form-control"></InputText>
+		<ValidationMessage For="@(() => NewPuzzleToAdd.Name)"/>
+	</div>
+
+	<div>
+		<label for="Description">Puzzle Description: </label>
+		<InputText id="Description" @bind-Value="@NewPuzzleToAdd.Description" class="form-control"></InputText>
+		<ValidationMessage For="@(() => NewPuzzleToAdd.Description)"/>
+	</div>
+
+	<div>
+		<label for="Order">Puzzle Order: </label>
+		<InputNumber id="Order" @bind-Value="@NewPuzzleToAdd.Order" class="form-control"></InputNumber>
+		<ValidationMessage For="@(() => NewPuzzleToAdd.Order)"></ValidationMessage>
+	</div>
+	<br/>
+	<div>
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</div>
+	<ValidationSummary />
+</EditForm>

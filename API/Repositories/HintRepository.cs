@@ -54,7 +54,8 @@ namespace API.Repositories
 
 		public async Task<IEnumerable<Puzzle>> GetPuzzlesById(int roomId)
 		{
-			var puzzles = await _context.Puzzles.Where(x => x.RoomId == roomId).ToListAsync();
+			var puzzles = await _context.Puzzles.Where(x => x.RoomId == roomId)
+				.Include(p => p.Room).ToListAsync();
 			return puzzles;
 		}
 

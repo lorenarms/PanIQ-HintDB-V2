@@ -1,4 +1,4 @@
-﻿@page "/puzzles/{roomId:int}"
+﻿@page "/puzzles/{roomId:int}/{roomName}"
 @inherits PuzzlesBase
 
 @using Models.DTOs
@@ -10,9 +10,11 @@
 }
 else
 {
-	<h3 class="mb-5">Puzzles</h3>
+	<h3 class="mb-5">Puzzles for @roomName</h3>
 
 	var puzzleCount = Puzzles.Count();
+
+	<a href="/newpuzzle/@roomId/@roomName" class="btn btn-primary">Add a Puzzle to @roomName</a>
 
 	@if (puzzleCount > 0)
 	{

@@ -42,15 +42,15 @@ namespace API.Controllers
 			}
 		}
 
-		[HttpPost("/newpuzzle/{roomId:int}")]
-		public async Task<ActionResult<Puzzle>> AddNewPuzzleToRoom(PuzzleDto puzzleDto, int roomId)
+		[HttpPost("/NewPuzzle/{roomId:int}")]
+		public async Task<ActionResult<Puzzle>> AddNewPuzzleToRoom(PuzzleDto puzzleDto)
 		{
 			var newPuzzle = new Puzzle()
 			{
+				RoomId = puzzleDto.RoomId,
 				Name = puzzleDto.Name,
 				Description = puzzleDto.Description,
 				Order = puzzleDto.Order
-				
 			};
 
 			await _hintRepository.AddNewPuzzleToRoom(newPuzzle);
