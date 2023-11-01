@@ -4,8 +4,9 @@
 
 <h3>New Puzzle for @roomName</h3>
 
-<EditForm Model="@NewPuzzleToAdd" OnSubmit="HandleSubmit">
+<EditForm Model="@NewPuzzleToAdd" OnValidSubmit="HandleSubmit">
 	<DataAnnotationsValidator />
+	@*<ValidationSummary />*@
 	<div>
 		<label for="Name">Puzzle Name: </label>
 		<InputText id="Name" @bind-Value="@NewPuzzleToAdd.Name" class="form-control"></InputText>
@@ -26,6 +27,7 @@
 	<br/>
 	<div>
 		<button type="submit" class="btn btn-primary">Submit</button>
+		<button class="btn btn-warning" @onclick="reset" @onclick:preventDefault>Reset</button>
 	</div>
-	<ValidationSummary />
+	
 </EditForm>

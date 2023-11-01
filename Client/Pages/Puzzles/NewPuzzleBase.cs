@@ -24,5 +24,12 @@ namespace Client.Pages.Puzzles
 			NewPuzzleToAdd.RoomId = roomId;
 			await HintService.AddNewPuzzleToRoom(NewPuzzleToAdd);
 		}
+
+		public void reset()
+		{
+			NewPuzzleToAdd.Name = null;
+			NewPuzzleToAdd.Description = null;
+			NewPuzzleToAdd.Order = 0;
+		}
 	}
 }
