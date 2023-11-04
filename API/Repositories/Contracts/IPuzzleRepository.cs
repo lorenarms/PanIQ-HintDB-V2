@@ -7,6 +7,7 @@ namespace API.Repositories.Contracts
 		Task<IEnumerable<Puzzle>> GetAllPuzzles();
 		Task<IEnumerable<Puzzle>> GetPuzzlesByRoomId(int id);
 		Task<Puzzle> GetPuzzleById(int id);
-		
+		Task<Puzzle> AddNewPuzzle(Puzzle newPuzzle);
+
 	}
 }

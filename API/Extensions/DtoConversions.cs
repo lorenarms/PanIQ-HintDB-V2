@@ -88,5 +88,31 @@ namespace API.Extensions
 
 			return result;
 		}
+
+		public static Puzzle ConvertToPuzzle(this PuzzleDto puzzleDto)
+		{
+			var puzzle = new Puzzle()
+			{
+				RoomId = puzzleDto.RoomId,
+				Name = puzzleDto.Name,
+				Description = puzzleDto.Description,
+				Order = puzzleDto.Order
+			};
+			return puzzle;
+		}
+
+		public static PuzzleDto ConvertToPuzzleDto(this Puzzle puzzle)
+		{
+			var puzzleDto = new PuzzleDto()
+			{
+				Id = puzzle.Id,
+				Name = puzzle.Name,
+				Description = puzzle.Description,
+				Order = puzzle.Order,
+				RoomId = puzzle.RoomId,
+				RoomName = puzzle.Room.Name
+			};
+			return puzzleDto;
+		}
 	}
 }

@@ -37,5 +37,12 @@ namespace API.Repositories
 				.SingleOrDefaultAsync(p => p.Id == id);
 			return puzzle;
 		}
+
+	    public async Task<Puzzle> AddNewPuzzle(Puzzle newPuzzle)
+	    {
+		    _context.Puzzles.Add(newPuzzle);
+			await _context.SaveChangesAsync();
+			return newPuzzle;
+	    }
     }
 }

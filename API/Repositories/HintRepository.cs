@@ -7,8 +7,6 @@ namespace API.Repositories
 {
 	public class HintRepository : IHintRepository
 	{
-		//TODO: move each entity thing to it's own repository
-
 		private readonly HintdbContext _context;
 		public HintRepository(HintdbContext context)
 		{
@@ -40,25 +38,6 @@ namespace API.Repositories
 			await _context.SaveChangesAsync();
 			return hint;
 		}
-
-
-
-		// PUZZLE REPOSITORY FUNCTION
-
-
-		public async Task<Puzzle> AddNewPuzzleToRoom(Puzzle puzzle)
-		{
-			_context.Puzzles.Add(puzzle);
-			await _context.SaveChangesAsync();
-			return puzzle;
-		}
-
-
-
-
-
-
-
-
+		
 	}
 }
