@@ -1,0 +1,46 @@
+﻿@page "/editpuzzle/{puzzleId:int}/{puzzleName}"
+@inherits EditPuzzleBase
+
+@using Models.DTOs
+
+<h3>Edit @puzzleName</h3>
+
+@if (PuzzleToEdit == null)
+{
+	<h4>Loading Edit Form...</h4>
+}
+else
+{
+	
+}
+
+<EditForm Model="@PuzzleToEdit" OnValidSubmit="HandleSubmit">
+	<DataAnnotationsValidator />
+	@*<ValidationSummary />*@
+	<div>
+		<label for="Name">Puzzle Name: </label>
+		<InputText id="Name" @bind-Value="@PuzzleToEdit.Name" class="form-control"></InputText>
+		<ValidationMessage For="@(() => PuzzleToEdit.Name)" />
+	</div>
+
+	<div>
+		<label for="Description">Puzzle Description: </label>
+		<InputText id="Description" @bind-Value="@PuzzleToEdit.Description" class="form-control"></InputText>
+		<ValidationMessage For="@(() => PuzzleToEdit.Description)" />
+	</div>
+
+	<div>
+		<label for="Order">Puzzle Order: </label>
+		<InputNumber id="Order" @bind-Value="@PuzzleToEdit.Order" class="form-control"></InputNumber>
+		<ValidationMessage For="@(() => PuzzleToEdit.Order)"></ValidationMessage>
+	</div>
+	<br />
+	<div>
+		<button type="submit" class="btn btn-primary">Submit</button>
+		<button class="btn btn-warning" @onclick="reset" @onclick:preventDefault>Reset</button>
+
+	</div>
+
+</EditForm>
+
+

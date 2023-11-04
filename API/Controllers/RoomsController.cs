@@ -8,13 +8,13 @@ namespace API.Controllers
 {
 	[Route("api/[controller]")]
 	[ApiController]
-	public class RoomController : ControllerBase
+	public class RoomsController : ControllerBase
 	{
-		private readonly IHintRepository _hintRepository;
+		private readonly IRoomRepository _roomRepository;
 
-		public RoomController(IHintRepository hintRepository)
+		public RoomsController(IRoomRepository roomRepository)
 		{
-			_hintRepository = hintRepository;
+			_roomRepository = roomRepository;
 		}
 
 		[HttpGet]
@@ -22,7 +22,7 @@ namespace API.Controllers
 		{
 			try
 			{
-				var rooms = await _hintRepository.GetRooms();
+				var rooms = await _roomRepository.GetAllRooms();
 
 				if (rooms == null)
 				{

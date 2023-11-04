@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Nbm/KW4k975ybhJV/FD1yZpCUSDpvmlhZUQdRSH67+Y=",
+  "Hash": "Q0dghaslG4OfOHeieZj0jF2YwbC+RhS3PXN7vn2T/rI=",
   "Source": "Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -66,23 +66,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "obj\\Debug\\net7.0\\Client.dll"
-    },
-    {
-      "Identity": "C:\\Users\\Lawrence\\Git Repos\\PanIQ HintDB V2\\hintdb\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Client.pdb",
-      "SourceId": "Client",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Lawrence\\Git Repos\\PanIQ HintDB V2\\hintdb\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/Client.pdb",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "BlazorWebAssemblyResource",
-      "AssetTraitValue": "symbol",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "obj\\Debug\\net7.0\\Client.pdb"
     },
     {
       "Identity": "C:\\Users\\Lawrence\\Git Repos\\PanIQ HintDB V2\\hintdb\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\dotnet.7.0.5.e50y17h45a.js",
@@ -6866,23 +6849,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\Lawrence\\Git Repos\\PanIQ HintDB V2\\hintdb\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.Runtime.Serialization.Json.dll"
-    },
-    {
-      "Identity": "C:\\Users\\Lawrence\\Git Repos\\PanIQ HintDB V2\\hintdb\\Client\\obj\\Debug\\net7.0\\build-gz\\zaLYBgzB.gz",
-      "SourceId": "Client",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Lawrence\\Git Repos\\PanIQ HintDB V2\\hintdb\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/Client.pdb.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "C:\\Users\\Lawrence\\Git Repos\\PanIQ HintDB V2\\hintdb\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Client.pdb",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\Lawrence\\Git Repos\\PanIQ HintDB V2\\hintdb\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Client.pdb"
     },
     {
       "Identity": "C:\\Users\\Lawrence\\Git Repos\\PanIQ HintDB V2\\hintdb\\Client\\obj\\Debug\\net7.0\\build-gz\\ZlLzpRAw.gz",

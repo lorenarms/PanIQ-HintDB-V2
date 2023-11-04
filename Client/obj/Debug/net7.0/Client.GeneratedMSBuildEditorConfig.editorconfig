@@ -24,6 +24,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSGludHNcSGludHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Lawrence/Git Repos/PanIQ HintDB V2/hintdb/Client/Pages/Puzzles/EditPuzzle.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHV6emxlc1xFZGl0UHV6emxlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Lawrence/Git Repos/PanIQ HintDB V2/hintdb/Client/Pages/Puzzles/NewPuzzle.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHV6emxlc1xOZXdQdXp6bGUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

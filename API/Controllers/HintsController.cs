@@ -9,10 +9,10 @@ namespace API.Controllers
 {
 	[Route("api/[controller]")]
 	[ApiController]
-	public class HintController : ControllerBase
+	public class HintsController : ControllerBase
 	{
 		private readonly IHintRepository _hintRepository;
-		public HintController(IHintRepository hintRepository)
+		public HintsController(IHintRepository hintRepository)
 		{
 			_hintRepository = hintRepository;
 		}
@@ -22,7 +22,7 @@ namespace API.Controllers
 		{
 			try
 			{
-				var hints = await _hintRepository.GetPuzzleHintsById(puzzleId);
+				var hints = await _hintRepository.GetHintsByPuzzleId(puzzleId);
 				
 				if (hints == null)
 				{

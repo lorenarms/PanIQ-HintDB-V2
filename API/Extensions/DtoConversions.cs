@@ -52,6 +52,21 @@ namespace API.Extensions
 					}).ToList();
 		}
 
+		public static IEnumerable<PuzzleDto> ConvertToDto(this IEnumerable<Puzzle> puzzles)
+		{
+			return (from puzzle in puzzles
+				select new PuzzleDto()
+				{
+					Id = puzzle.Id,
+					RoomId = puzzle.Room.Id,
+					RoomName = puzzle.Room.Name,
+					Name = puzzle.Name,
+					Description = puzzle.Description,
+					Order = puzzle.Order
+
+				}).ToList();
+		}
+
 		public static IEnumerable<HintDto> ConvertToDto(this IEnumerable<Hint> hints)
 		{
 			List<HintDto> result = new List<HintDto>();

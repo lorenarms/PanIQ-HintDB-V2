@@ -19,6 +19,8 @@ builder.Services.AddDbContextPool<HintdbContext>(options =>
 	);
 
 builder.Services.AddScoped<IHintRepository, HintRepository>();
+builder.Services.AddScoped<IPuzzleRepository, PuzzleRepository>();
+builder.Services.AddScoped<IRoomRepository, RoomRepository>();
 
 var app = builder.Build();
 
@@ -54,7 +56,7 @@ try
 catch (Exception e)
 {
 	var logger = services.GetRequiredService<ILogger<Program>>();
-	logger.LogError(e, "An error occured during migration");
+	logger.LogError(e, "An error occurred during migration");
 }
 
 
