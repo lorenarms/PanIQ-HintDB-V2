@@ -14,7 +14,10 @@ namespace API.Repositories
 		}
 		public async Task<IEnumerable<Hint>> GetAllHints()
 		{
-			var hints = await _context.Hints.ToListAsync();
+			var hints = await _context.Hints
+				.Include(p => p.Puzzle)
+				.ThenInclude(r => r.Room)
+				.ToListAsync();
 			return hints;
 		}
 

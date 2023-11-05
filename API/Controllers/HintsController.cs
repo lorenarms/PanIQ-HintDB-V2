@@ -17,6 +17,27 @@ namespace API.Controllers
 			_hintRepository = hintRepository;
 		}
 
+		[HttpGet]
+		public async Task<ActionResult<IEnumerable<HintDto>>> GetHints()
+		{
+			try
+			{
+				var hints = await _hintRepository.GetAllHints();
+				if (hints == null)
+				{
+					return NoContent();
+				}
+
+				var hintDtos = hints.ConvertToDto();
+				return Ok(hintDtos);
+			}
+			catch (Exception)
+			{
+				return StatusCode(StatusCodes.Status500InternalServerError,
+					"Error retrieving data from the database");
+			}
+		}
+
 		[HttpGet("{puzzleId:int}")]
 		public async Task<ActionResult<IEnumerable<HintDto>>> GetPuzzleHintsById(int puzzleId)
 		{
@@ -40,7 +61,7 @@ namespace API.Controllers
 			}
 		}
 
-		[HttpPost("/newhint/{puzzleId:int}")]
+		[HttpPost("newHint/{puzzleId:int}")]
 		public async Task<ActionResult<Hint>> AddHintToPuzzle(HintDto hintDto, int puzzleId)
 		{
 			var newHint = new Hint()

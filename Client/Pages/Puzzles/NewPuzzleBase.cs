@@ -8,25 +8,27 @@ namespace Client.Pages.Puzzles
 	public class NewPuzzleBase : ComponentBase
 	{
 		[Parameter]
-		public int roomId { get; set; }
+		public int RoomId { get; set; }
 		[Parameter]
-		public string roomName { get; set; }
+		public string RoomName { get; set; }
 
 		
 		[Inject]
-		public IHintService HintService { get; set; }
+		public IPuzzleService PuzzleService { get; set; }
+		[Inject]
+		public NavigationManager NavigationManager { get; set; }
 
 		public PuzzleDto NewPuzzleToAdd { get; set; } = new();
 
 		
 		public async Task HandleSubmit()
 		{
-			NewPuzzleToAdd.RoomId = roomId;
-			await HintService.AddNewPuzzleToRoom(NewPuzzleToAdd);
-			reset();
+			NewPuzzleToAdd.RoomId = RoomId;
+			await PuzzleService.AddNewPuzzleToRoom(NewPuzzleToAdd, RoomId);
+			NavigationManager.NavigateTo($"/puzzles/{RoomId}/{RoomName}");
 		}
 
-		public void reset()
+		public void Reset()
 		{
 			NewPuzzleToAdd.Name = null;
 			NewPuzzleToAdd.Description = null;

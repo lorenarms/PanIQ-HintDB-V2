@@ -1,8 +1,8 @@
-﻿@page "/newpuzzle/{roomId:int}/{roomName}"
+﻿@page "/newpuzzle/{RoomId:int}/{roomName}"
 @inherits NewPuzzleBase
-@inject NavigationManager NavManager
+@inject NavigationManager NavigationManager
 
-<h3>New Puzzle for @roomName</h3>
+<h3>New Puzzle for @RoomName</h3>
 
 <EditForm Model="@NewPuzzleToAdd" OnValidSubmit="HandleSubmit">
 	<DataAnnotationsValidator />
@@ -27,7 +27,7 @@
 	<br/>
 	<div>
 		<button type="submit" class="btn btn-primary">Submit</button>
-		<button class="btn btn-warning" @onclick="reset" @onclick:preventDefault>Reset</button>
+		<button class="btn btn-warning" @onclick="Reset" @onclick:preventDefault>Reset</button>
 
 	</div>
 	

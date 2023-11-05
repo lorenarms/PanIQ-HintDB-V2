@@ -7,12 +7,12 @@ namespace Client.Pages
 	public class RoomsBase : ComponentBase
 	{
 		[Inject]
-		public IHintService HintService { get; set; }
+		public IRoomService RoomService { get; set; }
 		public IEnumerable<RoomDto> Rooms { get; set; }
 
 		protected override async Task OnInitializedAsync()
 		{
-			Rooms = await HintService.GetRooms();
+			Rooms = await RoomService.GetRooms();
 		}
 	}
 }

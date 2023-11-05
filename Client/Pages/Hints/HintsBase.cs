@@ -13,12 +13,12 @@ namespace Client.Pages
 
 		[Inject]
 		public IHintService HintService { get; set; }
-
+		
 		public IEnumerable<HintDto> Hints { get; set; }
 
 		protected override async Task OnInitializedAsync()
 		{
-			Hints = await HintService.GetHints(PuzzleId);
+			Hints = await HintService.GetHintsByPuzzle(PuzzleId);
 			if (Hints != null)
 			{
 				var tempHintForPuzzleName = Hints.FirstOrDefault(x => x.PuzzleId == PuzzleId);

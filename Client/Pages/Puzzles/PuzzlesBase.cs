@@ -2,18 +2,18 @@
 using Microsoft.AspNetCore.Components;
 using Models.DTOs;
 
-namespace Client.Pages
+namespace Client.Pages.Puzzles
 {
 	public class PuzzlesBase : ComponentBase
 	{
 		[Parameter]
-		public int roomId { get; set; }
+		public int RoomId { get; set; }
 
 		[Parameter]
-		public string roomName { get; set; }
+		public string RoomName { get; set; }
 
 		[Inject]
-		public IHintService HintService { get; set; }
+		public IPuzzleService PuzzleService { get; set; }
 		public IEnumerable<PuzzleDto> Puzzles { get; set; }
 
 		public string ErrorMessage { get; set; }
@@ -22,13 +22,13 @@ namespace Client.Pages
 		{
 			try
 			{
-				Puzzles = await HintService.GetPuzzlesByRoomId(roomId);
+				Puzzles = await PuzzleService.GetPuzzlesByRoom(RoomId);
 				if (Puzzles != null)
 				{
-					var tempRoomName = Puzzles.FirstOrDefault(x => x.RoomId == roomId);
+					var tempRoomName = Puzzles.FirstOrDefault(x => x.RoomId == RoomId);
 					if (tempRoomName != null)
 					{
-						roomName = tempRoomName.RoomName;
+						RoomName = tempRoomName.RoomName;
 					}
 				}
 

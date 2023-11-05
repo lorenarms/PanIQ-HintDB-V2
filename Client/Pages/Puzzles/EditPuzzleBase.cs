@@ -6,22 +6,22 @@ namespace Client.Pages.Puzzles
 {
 	public class EditPuzzleBase : ComponentBase
 	{
-		[Parameter] public int puzzleId { get; set; }
-		[Parameter] public string puzzleName { get; set; }
+		[Parameter] public int PuzzleId { get; set; }
+		[Parameter] public string PuzzleName { get; set; }
 
-		[Inject] public IHintService HintService { get; set; }
+		[Inject] public IPuzzleService PuzzleService { get; set; }
 
 		public PuzzleDto PuzzleToEdit { get; set; } = new PuzzleDto();
-		private PuzzleDto _temp { get; set; }
+		private PuzzleDto Temp { get; set; }
 
 		protected override async Task OnInitializedAsync()
 		{
 			try
 			{
-				var puzzles =  await HintService.GetPuzzles();
-				if (puzzles == null)
+				var puzzles =  await PuzzleService.GetPuzzles();
+				if (puzzles != null)
 				{
-					PuzzleToEdit = puzzles.SingleOrDefault(p => p.Id == puzzleId);
+					PuzzleToEdit = puzzles.SingleOrDefault(p => p.Id == PuzzleId);
 				}
 
 			}
@@ -35,12 +35,12 @@ namespace Client.Pages.Puzzles
 
 		public async Task HandleSubmit()
 		{
-			await HintService.AddNewPuzzleToRoom(PuzzleToEdit);
+			//await PuzzleService.AddNewPuzzleToRoom(PuzzleToEdit);
 		}
 
 		public void reset()
 		{
-			PuzzleToEdit = _temp;
+			PuzzleToEdit = Temp;
 		}
 	}
 }

@@ -10,11 +10,11 @@
 }
 else
 {
-	<h3 class="mb-5">Puzzles for @roomName</h3>
+	<h3 class="mb-5">Puzzles for @RoomName</h3>
 
 	var puzzleCount = Puzzles.Count();
 
-	<a href="/newpuzzle/@roomId/@roomName" class="btn btn-primary">Add a Puzzle to @roomName</a>
+	<a href="/newpuzzle/@RoomId/@RoomName" class="btn btn-primary">Add a Puzzle to @RoomName</a>
 
 	@if (puzzleCount > 0)
 	{
@@ -32,7 +32,7 @@ else
 						<div class="card">
 							<div class="card-body">
 								<h4 class="card-title mb-2">
-									@item.Name
+									@item.Order: @item.Name
 								</h4>
 								<p class="card-text">
 									@item.Description

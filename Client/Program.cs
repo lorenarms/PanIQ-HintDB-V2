@@ -11,5 +11,7 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://localhost:5000/") });
 
 builder.Services.AddScoped<IHintService, HintService>();
+builder.Services.AddScoped<IPuzzleService, PuzzleService>();
+builder.Services.AddScoped<IRoomService, RoomService>();
 
 await builder.Build().RunAsync();

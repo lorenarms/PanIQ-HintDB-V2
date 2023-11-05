@@ -18,7 +18,7 @@ namespace Client.Services
 			var response = await _httpClient.GetAsync($"api/Puzzles");
 			if (response.IsSuccessStatusCode)
 			{
-				if (response.StatusCode == System.Net.HttpStatusCode.OK)
+				if (response.StatusCode == System.Net.HttpStatusCode.NoContent)
 				{
 					return Enumerable.Empty<PuzzleDto>();
 				}
@@ -65,9 +65,25 @@ namespace Client.Services
 			throw new Exception(message);
 		}
 
-		public Task<PuzzleDto> AddNewPuzzleToRoom(PuzzleDto puzzleDto)
+		public async Task<PuzzleDto> AddNewPuzzleToRoom(PuzzleDto puzzleDto, int roomId)
 		{
-			throw new NotImplementedException();
+			var response = await _httpClient.PostAsJsonAsync<PuzzleDto>($"api/Puzzles/AddNewPuzzle/{roomId}", puzzleDto);
+			if (response.IsSuccessStatusCode)
+			{
+				if (response.StatusCode == System.Net.HttpStatusCode.NoContent)
+				{
+					return default;
+
+				}
+
+				return await response.Content.ReadFromJsonAsync<PuzzleDto>();
+
+			}
+			else
+			{
+				var message = await response.Content.ReadAsStringAsync();
+				throw new Exception(message);
+			}
 		}
 	}
 }
